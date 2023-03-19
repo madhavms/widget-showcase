@@ -30,8 +30,8 @@ jobs:
           FIN_API_URL: ${{ secrets.FIN_API_URL }}
           FIN_WS_URL: ${{ secrets.FIN_WS_URL }}
         run: |
-          echo "FIN_API_URL=${FIN_API_URL}" >> ./hostApp/.env
-          echo "FIN_WS_URL=${FIN_WS_URL}" >> ./hostApp/.env
+          echo "FIN_API_URL=${FIN_API_URL}" >> ./finWidget/.env
+          echo "FIN_WS_URL=${FIN_WS_URL}" >> ./finWidget/.env
 
       - name: Build React app
         working-directory: ./finWidget
