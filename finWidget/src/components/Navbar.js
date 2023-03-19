@@ -17,23 +17,32 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
   },
   appBar: {
-    backgroundColor: "#00b8d4",
+    backgroundColor: "#3f51b5",
   },
 }));
-
 
 export default function Navbar() {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.appBar}>
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
             Widget Showcase
           </Typography>
         </Toolbar>
       </AppBar>
+      <style>
+        {`
+          @media only screen and (max-width: 600px) {
+            .MuiToolbar-root {
+              flex-direction: column;
+              align-items: center;
+            }
+          }
+        `}
+      </style>
     </div>
   );
 }
