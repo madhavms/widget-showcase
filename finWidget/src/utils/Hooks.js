@@ -10,7 +10,7 @@ export const useStockList = () => {
     async function fetchData() {
       setIsLoading(true);
       try {
-        const response = await fetch("http://localhost:8000/stocklist");
+        const response = await fetch(`${process.env.FIN_API_URL}/stocklist`);
         const data = await response.json();
         setStockList(data);
       } catch (error) {
@@ -44,7 +44,7 @@ export const useStockData = (symbol) => {
     if (websocket && websocket.readyState === WebSocket.OPEN) {
       websocket.close(1000);
     }
-    const ws = new WebSocket(`ws://localhost:8000/stockprices/${symbol}`);
+    const ws = new WebSocket(`${process.env.FIN_WS_URL}/stockprices/${symbol}`);
     ws.onopen = () => {
     };
     ws.onmessage = (event) => {
@@ -98,7 +98,7 @@ export function useStockRisk(symbol) {
     async function fetchData() {
       setIsLoading(true);
       try {
-        const response = await fetch(`http://localhost:8000/risk/${symbol}`);
+        const response = await fetch(`${process.env.FIN_API_URL}/risk/${symbol}`);
         const data = await response.json();
         setRiskData(data);
       } catch (error) {
