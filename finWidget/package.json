@@ -8,8 +8,8 @@
     "start": "webpack-cli serve",
     "watch": "webpack-cli watch",
     "build": "webpack --mode production",
-    "serve": "serve dist -p 3001",
-    "clean": "rm -rf dist"
+    "serve": "serve build -p 3001",
+    "clean": "rm -rf build"
   },
   "author": "",
   "license": "ISC",
