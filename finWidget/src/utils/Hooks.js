@@ -44,7 +44,7 @@ export const useStockData = (symbol) => {
     if (websocket && websocket.readyState === WebSocket.OPEN) {
       websocket.close(1000);
     }
-    const ws = new WebSocket(`${process.env.FIN_WS_URL}stockprices/${symbol}`);
+    const ws = new WebSocket(`${process.env.FIN_WS_URL}/stockprices/${symbol}`);
     ws.onopen = () => {
     };
     ws.onmessage = (event) => {
