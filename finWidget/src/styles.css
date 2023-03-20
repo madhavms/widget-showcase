@@ -216,6 +216,8 @@ mt-1 {
 
 .risk-container {
   padding: 1rem;
+  width:250px;
+  height: 120px;
   margin: 0.5rem;
   background-color: #f5f5f5;
   color: #333;
