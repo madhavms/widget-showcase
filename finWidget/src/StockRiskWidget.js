@@ -3,7 +3,7 @@ import StockWidget from "./StockWidget";
 import RiskWidget from "./RiskWidget";
 
 function StockRiskWidget(props) {
-  const { setWidgetStyle, widgetStyle, handleClose, uuid } = props;
+  const { setWidgetStyle, widgetStyle, handleClose, uuid, mode } = props;
 
   useEffect(() => {
     if (!!window["widget-style"] && typeof setWidgetStyle === "function") {
@@ -21,10 +21,10 @@ function StockRiskWidget(props) {
       }}
     >
       <div style={{ flexGrow: 0 }}>
-        <StockWidget symbol="AAPL" handleClose={handleClose} uuid={uuid} />
+        <StockWidget symbol="AAPL" handleClose={handleClose} uuid={uuid} mode={mode}/>
       </div>
       <div style={{ flexGrow: 0 }}>
-        <RiskWidget symbol="AAPL" uuid={uuid} />
+        <RiskWidget symbol="AAPL" uuid={uuid} mode={mode}/>
       </div>
 
       {/* Add media query to change flex-direction to column for small screens */}
