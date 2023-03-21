@@ -4,7 +4,7 @@ import {subscribe, unsubscribe} from "messagebusmono";
 import RiskWidgetPlaceholder from './components/RiskWidgetPlaceholder';
 
 function RiskWidget(props) {
-  const {uuid, symbol} = props;
+  const {uuid, symbol, mode} = props;
   const [currentSymbol, setCurrentSymbol] = useState("");
   const { riskData, isLoading, error } = useStockRisk(currentSymbol);
   const handleMessage = (event) => {
@@ -37,12 +37,13 @@ function RiskWidget(props) {
     return <div>Enter a symbol to see the risk data</div>;
   }
 
+  const modeClass = mode === "dark" ? "dark-mode" : "light-mode";
 
   return (
-    <div className="risk-container">
-      <div className="risk-symbol">{riskData.id}</div>
-      <div className="risk-risk">Risk: {riskData.risk}</div>
-      <div className="risk-description">{riskData.description}</div>
+    <div className={`risk-container ${modeClass}`}>
+      <div className={`risk-symbol  ${modeClass}`}>{riskData.id}</div>
+      <div className={`risk-risk  ${modeClass}`}>Risk: {riskData.risk}</div>
+      <div className={`risk-description  ${modeClass}`}>{riskData.description}</div>
     </div>
   );
 }
