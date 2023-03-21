@@ -29,6 +29,11 @@ const App = (props) => {
     <div className={`root-container ${modeClass}`}>
     <React.Suspense fallback={<div>Loading...</div>}>
     <Navbar {...{mode, setMode}}/>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <div className="remote-container">
         <div class={`widget-remote ${modeClass}`}>
         <h2>Stock Widget</h2>
