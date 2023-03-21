@@ -28,7 +28,7 @@ function RiskWidget(props) {
 
 
   if (isLoading) {
-    return <RiskWidgetPlaceholder />;
+    return <RiskWidgetPlaceholder {...{mode}}/>;
   }
   if (error) {
     return <div>Error: {error.message}</div>;
