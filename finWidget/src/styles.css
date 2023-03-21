@@ -187,28 +187,44 @@ mt-1 {
 
 .remote-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
   flex-wrap: wrap;
-  margin-left:25%;
-  margin-top:5%;
+  margin-top: 5%;
 }
 
-.widget-remote {
-  margin: 40px;
-}
 
-.widget-remote h2{
+
+.widget-remote h2 {
   margin: 5px;
   padding: 0;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
+  color: #333;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 2px solid #333;
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 20px;
 }
+
+.widget-remote.dark-mode h2{
+  color:white;
+  border-bottom: 2px solid white;
+}
+
 
 .risk-container {
   padding: 1rem;
-  margin: 0.5rem;
   width:250px;
   height: 120px;
+  margin: 0.5rem;
+  background-color: #f5f5f5;
+  color: #333;
   min-width: 200px;
   max-width: 250px;
   text-align: center;
@@ -217,11 +233,8 @@ mt-1 {
 }
 
 .risk-container.dark-mode {
-  background-color: #2c2828;
-}
-
-.risk-container.light-mode {
-  background-color: rgb(206, 205, 205);
+background-color: #252424;
+color:white;
 }
 
 .risk-symbol {
@@ -229,55 +242,20 @@ mt-1 {
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
 }
-
-.risk-symbol.dark-mode {
-  color: white;
-}
-
-.risk-symbol.light-mode {
-  color: black;
-}
-
 .risk-risk {
   font-size: 1.3rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
-
-.risk-risk.dark-mode {
-  color: white;
-}
-
-.risk-symbol.light-mode {
-  color: black;
-}
-
-
 .risk-description {
   text-align: center;
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
 }
 
-.risk-description.light-mode {
-  color:black;
-}
-
-.risk-description.dark-mode {
-  color:white;
-}
-
-
-/* styles.css */
-html,
-body,
-#root,
-.root-container {
+.root-container.dark-mode {
+  background: #333333;
+  width: 100%;
   height: 100%;
+  position: absolute;
 }
-
-.root-container {
-  display: flex;
-  flex-direction: column;
-}
-

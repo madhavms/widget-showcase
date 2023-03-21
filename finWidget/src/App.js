@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import RiskWidget from "./RiskWidget";
 import DynamicFinancialNewsWidget from "./NewsWidget";
 import StockWidget from "./StockWidget";
-import StockRiskWidget from "./StockRiskWidget";
+
 
 const App = (props) => {
+  const [mode, setMode] = useState(localStorage.getItem("mode") || "light");
   const news = [
     {
       id: 1,
@@ -22,22 +23,24 @@ const App = (props) => {
       url: "/fed-interest-rates",
     },
   ];
+
+  const modeClass= mode==='dark' ? 'dark-mode' : 'light-mode';
   return (
-    <div>
+    <div className={`root-container ${modeClass}`}>
     <React.Suspense fallback={<div>Loading...</div>}>
-    <Navbar />
+    <Navbar {...{mode, setMode}}/>
       <div className="remote-container">
-        <div class="widget-remote">
+        <div class={`widget-remote ${modeClass}`}>
         <h2>Stock Widget</h2>
-        <StockWidget symbol="AAPL" />
+        <StockWidget symbol="AAPL" {...{mode}}/>
         </div>
-        <div class="widget-remote">
+        <div class={`widget-remote ${modeClass}`}>
         <h2>Financial News Widget</h2>
-        <DynamicFinancialNewsWidget news={news} />
+        <DynamicFinancialNewsWidget news={news} {...{mode}}/>
         </div>
-        <div class="widget-remote">
+        <div class={`widget-remote ${modeClass}`}>
         <h2>Risk Analysis Widget</h2>
-        <RiskWidget symbol="AAPL" />
+        <RiskWidget symbol="AAPL" {...{mode}}/>
         </div>
       </div>
       </React.Suspense>

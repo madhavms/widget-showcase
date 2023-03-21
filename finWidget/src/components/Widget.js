@@ -29,7 +29,7 @@ const Widget = (props) => {
   }
 
   return (
-    <div className="flex widget-container">
+    <div className={`${mode === "light" ? "body" : "body-dark"} flex widget-container`}>
       <div
         className={`quote rounded-lg shadow-md p-4 ${colorClass} bg-gray-800 w-64`}
       >
