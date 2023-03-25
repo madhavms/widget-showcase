@@ -13,7 +13,7 @@ const App = (props) => {
       title: "Stock Market Hits All-Time High",
       description:
         "The stock market reached a new record high today as investors cheered strong earnings reports and positive economic data.",
-      url: "/stock-market-update",
+      url: "/stock-market-updates",
     },
     {
       id: 2,
