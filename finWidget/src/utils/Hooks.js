@@ -29,7 +29,6 @@ export const useStockData = (symbol) => {
   const [isError, setIsError] = useState(false);
   const [websocket, setWebsocket] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  console.log('isLoading=',isLoading)
   const [quote, setQuote] = useState({
     price: "--",
     var: "--",
