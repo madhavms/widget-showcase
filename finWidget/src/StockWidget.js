@@ -4,7 +4,7 @@ import Widget from "./components/Widget";
 import "./styles.css";
 
 function StockWidget(props) {
-  const { setWidgetStyle, handleClose, symbol="AAPL",uuid } = props;
+  const { setWidgetStyle, symbol="AAPL",uuid } = props;
 
   useEffect(() => {
     if (
@@ -18,7 +18,6 @@ function StockWidget(props) {
   return symbol && (
     <Widget
       props={props}
-      handleDelete={handleClose}
       uuid={uuid}
     />
   ) 

@@ -55,9 +55,7 @@ const DynamicFinancialNewsWidget = (props) => {
           <React.Fragment key={item.id}>
             <h3 className={`news-item-title ${modeClass}`}>{item.title}</h3>
             <p className={`news-item-description ${modeClass}`}>{item.description}</p>
-            <a className={`news-item-link`}>
-              Read More
-            </a>
+            <a className={`news-item-link`}>Read More</a>
           </React.Fragment>
         ))}
       </div>
