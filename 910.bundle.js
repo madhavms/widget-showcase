@@ -1,1 +1,1 @@
-"use strict";(self.webpackChunkremote=self.webpackChunkremote||[]).push([[910],{3910:(e,n,r)=>{r.r(n),r.d(n,{default:()=>u}),r(5558);var t=r(2169),s=r.n(t);const u=function(e,n){s().render(e,n)}}}]);
+"use strict";(self.webpackChunkremote=self.webpackChunkremote||[]).push([[910],{3910:(e,n,l)=>{l.r(n),l.d(n,{default:()=>u});var t=l(5558),a=l.n(t),r=l(2169),c=l.n(r);const u=function(e,n){var l=a().lazy(e);c().render(a().createElement(t.Suspense,{fallback:a().createElement("div",null,"Loading...")},l&&a().createElement(l,null)),n)}}}]);
