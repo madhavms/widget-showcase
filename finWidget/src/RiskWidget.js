@@ -8,9 +8,14 @@ function RiskWidget(props) {
   const [currentSymbol, setCurrentSymbol] = useState("");
   const { riskData, isLoading, error } = useStockRisk(currentSymbol);
   const handleMessage = (event) => {
-    if(event.data.data.message && event.data.data.message.symbol && event.data.data.uuid === uuid)
-    setCurrentSymbol(event.data.data.message.symbol);
-  };
+    if (
+      event?.data?.data?.message &&
+      event.data.data.message.symbol &&
+      event.data.data.uuid === uuid
+    ) {
+      setCurrentSymbol(event.data.data.message.symbol);
+    }
+  };  
 
   useEffect(() => {
     subscribe(handleMessage);
