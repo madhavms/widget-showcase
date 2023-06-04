@@ -69,7 +69,6 @@ module.exports = {
       exposes: {
         "./StockWidget": "./src/StockWidget.js",
         "./RiskWidget": "./src/RiskWidget.js",
-        "./StockRiskWidget": "./src/StockRiskWidget.js",
         "./NewsWidget": "./src/NewsWidget.js",
         "./ReactRenderer": "./src/utils/ReactRenderer.js",
       },
