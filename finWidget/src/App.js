@@ -35,15 +35,15 @@ const App = (props) => {
       <br></br>
       <br></br>
       <div className="remote-container">
-        <div class={`widget-remote ${modeClass}`}>
+        <div className={`widget-remote ${modeClass}`}>
         <h2>Stock Widget</h2>
         <StockWidget symbol="AAPL" {...{mode}}/>
         </div>
-        <div class={`widget-remote ${modeClass}`}>
+        <div className={`widget-remote ${modeClass}`}>
         <h2>Financial News Widget</h2>
         <DynamicFinancialNewsWidget news={news} {...{mode}}/>
         </div>
-        <div class={`widget-remote ${modeClass}`}>
+        <div className={`widget-remote ${modeClass}`}>
         <h2>Risk Analysis Widget</h2>
         <RiskWidget symbol="AAPL" {...{mode}}/>
         </div>
