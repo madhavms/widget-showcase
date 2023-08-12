@@ -7,17 +7,25 @@ const Widget = (props) => {
   const [currentSymbol, setCurrentSymbol] = useState("AAPL");
   const { isLoading, isError, quote, stock } = useStockData(currentSymbol);
   const {stockList} = useStockList();
-  const { mode, uuid } = props;
+  const { mode, uuid, setworkspaceState, getworkspaceState  } = props;
   const colorClass = mode === "light" ? "light" : "dark";
   const varColor = quote.var < 0 ? "text-red-500" : "text-green-500";
 
   useEffect(() => {
-    send({ message: { symbol: currentSymbol }, uuid });
+    let symbol = "";
+    if(typeof getworkspaceState === "function"){
+      symbol = getworkspaceState().symbol;
+    }
+    
+    send({ message: { symbol: symbol ? symbol : currentSymbol }, uuid });
   }, []);
 
   const handleChange = (e) => {
     let id = e.target.value;
     setCurrentSymbol(id);
+    if(typeof setworkspaceState === "function"){
+      setworkspaceState({symbol: id})
+    }
     send({message: { symbol: id } , uuid})
   };
 
