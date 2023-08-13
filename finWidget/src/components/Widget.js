@@ -6,7 +6,7 @@ import { StockWidgetPlaceholder } from "./StockWIdgetPlaceholder";
 const Widget = (props) => {
   let symbol = "AAPL";
   const { getworkspaceState, setworkspaceState, currentWorkspaceId } = props;
-  if (typeof getworkspaceState === "function") {
+  if (typeof getworkspaceState === "function") 
     symbol = getworkspaceState(currentWorkspaceId)?.symbol || "AAPL";
     const [currentSymbol, setCurrentSymbol] = useState(symbol);
     const { isLoading, isError, quote, stock } = useStockData(currentSymbol);
@@ -100,6 +100,6 @@ const Widget = (props) => {
       </div>
     );
   }
-};
+
 
 export default Widget;
