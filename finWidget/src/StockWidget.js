@@ -4,8 +4,7 @@ import Widget from "./components/Widget";
 import "./styles.css";
 
 function StockWidget(props) {
-  const { setWidgetStyle, symbol="AAPL",uuid } = props;
-
+  const { setWidgetStyle } = props;
   useEffect(() => {
     if (
       !!window["widget-style"] &&
@@ -15,10 +14,9 @@ function StockWidget(props) {
     }
   }, []);
 
-  return symbol && (
+  return (
     <Widget
-      props={props}
-      uuid={uuid}
+      {...props}
     />
   ) 
 }
