@@ -48,7 +48,6 @@ module.exports = {
           {
             loader: "style-loader",
             options: {
-              modules: true,
               insert: (element) => {
                 window["widget-style"] = element;
                 var parent = options.target || document.head;
