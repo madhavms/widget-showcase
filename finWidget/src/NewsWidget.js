@@ -3,17 +3,12 @@ import "./css/DynamicFinancialNewsWidget.css";
 
 const DynamicFinancialNewsWidget = (props) => {
   const [news, setNews] = useState([]);
-  const { setWidgetStyle, widgetStyle, mode } = props;
+  const { addStyleForShadowRoot, mode } = props;
 
   useEffect(() => {
-    if (
-      !!window["widget-style"] &&
-      typeof setWidgetStyle === "function"
-    ) {
-      setWidgetStyle(window["widget-style"]);
-    }
+    if(typeof addStyleForShadowRoot === "function")
+    addStyleForShadowRoot();
   }, []);
-
 
   const newsList = [
     {

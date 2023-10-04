@@ -37,6 +37,7 @@ function RiskWidget(props) {
     return <div>Enter a symbol to see the risk data</div>;
   }
 
+
   const modeClass = mode === "dark" ? "dark-mode" : "light-mode";
 
   return (
